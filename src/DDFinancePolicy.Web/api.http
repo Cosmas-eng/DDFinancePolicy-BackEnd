@@ -1,0 +1,77 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@host=https://localhost
+@port=57679
+
+// List all policies
+GET {{host}}:{{port}}/Policies
+
+###
+
+// Get a specific policy
+@id_to_get=1
+GET {{host}}:{{port}}/Policies/{{id_to_get}}
+
+###
+
+// Add a new policy
+POST {{host}}:{{port}}/Policies
+Content-Type: application/json
+
+{
+  "PolicyName": "Term Life Insurance",
+  "HolderId": "611",
+  "FirstName": "John",
+  "LastName": "Doe",
+  "OtherNames":,
+  "CoutryCode": "+254"
+  "Phone": "234567890",
+  "PhoneExtention":,
+  "Premium": 4800,
+  "StartDate": 1667206800000
+}
+
+###
+
+// Update policy contact
+@id_to_update=1
+PUT {{host}}:{{port}}/Policies/{{id_to_update}}/Contact
+Content-Type: application/json
+
+{
+  "PolicyId": {{id_to_update}},
+  "CoutryCode": "+254",
+  " Phone": "734547824",
+  "PhoneExtention":
+}
+
+###
+
+// Update policy status
+@id_to_update=1
+PUT {{host}}:{{port}}/Policies/{{id_to_update}}/Status
+Content-Type: application/json
+
+{
+  "PolicyId": {{id_to_update}},
+  "newStatus": "Canceled"
+}
+
+###
+
+// Update policy premium
+@id_to_update=1
+PUT {{host}}:{{port}}/Policies/{{id_to_update}}/Premium
+Content-Type: application/json
+
+{
+  "PolicyId": {{id_to_update}},
+  "NewPolicyValue": 73000,
+  "EffectiveDate": 1743141600
+}
+
+###
+
+// Delete a policy
+@id_to_delete=1
+DELETE {{host}}:{{port}}/Policies/{{id_to_delete}}
+
