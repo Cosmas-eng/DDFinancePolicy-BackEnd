@@ -19,7 +19,7 @@ public class ListPoliciesQueryService(AppDbContext _db) : IListPoliciesQueryServ
         (@searchTerm IS NULL OR PolicyHolderName LIKE '%' + @searchTerm + '%')
         AND (@filterEnumValue IS NULL OR PolicyStatus = @filterEnumValue)
     ORDER BY
-        PolicyHolderName DESC";
+        PolicyHolderName ASC";
 
     // Assumes `filterTerm` is directly an integer from the UI matching domain the enum value
     int? filterEnumValue = statusFilter == 0 ? (int?)null : statusFilter; // Example: 0 means no filter applied

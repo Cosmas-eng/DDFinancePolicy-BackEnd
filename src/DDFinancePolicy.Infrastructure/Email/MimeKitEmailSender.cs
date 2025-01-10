@@ -2,8 +2,7 @@
 
 namespace DDFinancePolicy.Infrastructure.Email;
 
-public class MimeKitEmailSender(ILogger<MimeKitEmailSender> logger,
-  IOptions<MailserverConfiguration> mailserverOptions) : IEmailSender
+public class MimeKitEmailSender(ILogger<MimeKitEmailSender> logger, IOptions<MailserverConfiguration> mailserverOptions) : IEmailSender
 {
   private readonly ILogger<MimeKitEmailSender> _logger = logger;
   private readonly MailserverConfiguration _mailserverConfiguration = mailserverOptions.Value!;

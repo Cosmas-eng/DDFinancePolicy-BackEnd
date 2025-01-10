@@ -22,12 +22,12 @@ Content-Type: application/json
   "HolderId": "611",
   "FirstName": "John",
   "LastName": "Doe",
-  "OtherNames":,
-  "CoutryCode": "+254"
+  "OtherNames": null,
+  "CountryCode": "+254",
   "Phone": "234567890",
-  "PhoneExtention":,
+  "PhoneExtention": null,
   "Premium": 4800,
-  "StartDate": 1667206800000
+  "StartDate": "2025-01-31T00:00:00Z"
 }
 
 ###
@@ -39,9 +39,10 @@ Content-Type: application/json
 
 {
   "PolicyId": {{id_to_update}},
+  "Id": 1,
   "CoutryCode": "+254",
-  " Phone": "734547824",
-  "PhoneExtention":
+  "Phone": "734547824",
+  "PhoneExtention": null
 }
 
 ###
@@ -53,7 +54,8 @@ Content-Type: application/json
 
 {
   "PolicyId": {{id_to_update}},
-  "newStatus": "Canceled"
+  "Id": 1,
+  "NewStatus": "Canceled"
 }
 
 ###
@@ -65,8 +67,9 @@ Content-Type: application/json
 
 {
   "PolicyId": {{id_to_update}},
+  "Id": 1,
   "NewPolicyValue": 73000,
-  "EffectiveDate": 1743141600
+  "EffectiveDate": "2025-02-28T00:00:00Z"
 }
 
 ###

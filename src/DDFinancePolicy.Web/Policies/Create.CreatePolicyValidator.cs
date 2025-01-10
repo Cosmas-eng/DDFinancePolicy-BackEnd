@@ -21,7 +21,7 @@ public class CreatePolicyValidator : Validator<CreatePolicyRequest>
       .Length(2, 44);
     RuleFor(p => p.OtherNames)
       .Length(0, 40);
-    RuleFor(p => p.CoutryCode)
+    RuleFor(p => p.CountryCode)
       .NotEmpty().WithMessage("Policy holder country is required")
       .Length(2, DataSchemaConstants.DEFAULT_COUNTRY_CODE_LENGTH);
     RuleFor(p => p.Phone)

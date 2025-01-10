@@ -27,7 +27,7 @@ public static class SeedData
     await dbContext.SaveChangesAsync();
   }
 
-  public static void IncludeContacts()
+  private static void IncludeContacts()
   {
     Policy1.UpdatePhoneNumber("+254", "704464716", null);
     Policy2.UpdatePhoneNumber("+254", "718890334", null);

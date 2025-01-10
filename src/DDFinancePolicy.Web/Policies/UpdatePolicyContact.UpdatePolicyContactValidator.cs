@@ -9,7 +9,7 @@ public class UpdatePolicyContactValidator : Validator<UpdatePolicyContactRequest
   {
     RuleFor(p => p.PolicyId)
      .GreaterThan(0).WithMessage("Policy database Id cannot be less than or equal to zero")
-     .Must((args, policyId) => args.Id == policyId).WithMessage("Rout and body IDs must match");
+     .Must((args, policyId) => args.Id == policyId).WithMessage("Route and body IDs must match");
     RuleFor(p => p.CoutryCode)
       .NotEmpty().WithMessage("Policy holder country is required")
       .Length(2, DataSchemaConstants.DEFAULT_COUNTRY_CODE_LENGTH);

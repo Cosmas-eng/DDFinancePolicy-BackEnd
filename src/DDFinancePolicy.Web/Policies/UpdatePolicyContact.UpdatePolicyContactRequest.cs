@@ -6,6 +6,7 @@ public class UpdatePolicyContactRequest
 {
   public const string Route = "/Policies/{PolicyId:int}/Contact";
   public static string BuildRoute(int policyId) => Route.Replace("{PolicyId:int}", policyId.ToString());
+
   /// <summary>
   /// Policy Id from the route
   /// </summary>

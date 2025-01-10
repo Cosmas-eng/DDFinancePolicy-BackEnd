@@ -7,6 +7,9 @@ public class UpdatePolicyStatusRequest
   public const string Route = "/Policies/{PolicyId:int}/Status";
   public static string BuildRoute(int policyId) => Route.Replace("{PolicyId:int}", policyId.ToString());
 
+  /// <summary>
+  /// Policy Id from the route
+  /// </summary>
   public int PolicyId { get; set; }
   /// <summary>
   /// Database Id of the policy being updated
