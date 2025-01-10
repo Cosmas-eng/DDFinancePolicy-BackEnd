@@ -5,7 +5,7 @@
 
 This is a Back-End test project for a [job](https://ddfinance.com/jobs/dev/) opening at [DDFinance](https://ddfinance.com/). It is an ASP.NET Core project based off of [Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). A Domain Driven, loosely-coupled and dependency-inverted design architecture.
 
-However, while this project applies the Clean Architecture template, it only applies the three main layers out of the four that are synonimous with the design. These layers include, the `DDFinancePolicy.Web` layer, the `DDFinancePolicy.Core` layer and the `DDFinancePolicy.Infrastructure` layer
+While this project applies the Clean Architecture template, it only implements three main layers out of the four that are synonimous with the design. These layers include, the `DDFinancePolicy.Web` layer, the `DDFinancePolicy.Core` layer and the `DDFinancePolicy.Infrastructure` layer
 
 ## Table Of Contents
 
@@ -27,7 +27,7 @@ However, while this project applies the Clean Architecture template, it only app
 
 ## .NET Version
 
-The project is using **.NET 9** which corresponds to the lates template version 10.x.
+The project is using **.NET 9** which corresponds to the lates template version 10.0.1
 
 ## APIs
 
@@ -35,7 +35,7 @@ This solution only has support for API Endpoints using the [FastEndpoints](https
 
 ## The Core Project (`DDFinancePolicy.Core`)
 
-The Core project is the center of the design, and all other project dependencies point toward it. As such, it has very few external dependencies. The Core project include the Domain Model including the following:
+The Core project is the center of the design, and all other project dependencies point toward it. As such, it has very few external dependencies. The Core project include the Domain Model with the following:
 
 - Entities
 - Aggregates
@@ -47,21 +47,19 @@ The Core project is the center of the design, and all other project dependencies
 - Interfaces
 - DTOs
 
-The central focus here is on Entities and business rules and since this is a Domain-Driven Design, this is therefore the Domain Model.
+The central focus here is on Entities and business rules. Entities that are related and change together are grouped into an Aggregate employing encapsulation and minimize public setters. They can leverage Domain Events to communicate changes to other parts of the system.
 
-Entities that are related and change together are grouped into an Aggregate employing encapsulation and minimize public setters. They can leverage Domain Events to communicate changes to other parts of the system.
-
-Entities define Specifications that can be used to query for them and for mutable access, Entities are accessed through a Repository interface.
+Entities also define Specifications that can be used to query for them and for mutable access, Entities are accessed through a Repository interface.
 
 Read-only ad hoc queries use separate Query Services that don't use the Domain Model.
 
 ## The Infrastructure Project (`DDFinancePolicy.Infrastructure`)
 
-Most of your application's dependencies on external resources are implemented in classes defined in this project. These classes implement interfaces defined in Core. The project includes data access and domain event implementations, but you would also include things like email providers, file access, web api clients, etc. so they're not adding coupling to the Core or UI projects.
+Most of the application's dependencies on external resources are implemented in classes defined in this project. These classes implement interfaces defined in Core. The project includes data access and domain event implementations, but one would also include things like email providers, file access, web api clients, etc. so they're not adding coupling to the Core or UI projects.
 
 ## The Web Project (`DDFinancePolicy.Web`)
 
-The entry point of the application is the ASP.NET Core web project. This is actually a console application, with a `public static void Main` method in `Program.cs`. It leverages [FastEndpoints](https://fast-endpoints.com/) and the REPR pattern to organize the API endpoints.
+The entry point of the application is the ASP.NET Core web project. A console application, with a `public static void Main` method in `Program.cs`. It leverages [FastEndpoints](https://fast-endpoints.com/) and the REPR pattern to organize the API endpoints.
 
 ## The SharedKernel Package
 
