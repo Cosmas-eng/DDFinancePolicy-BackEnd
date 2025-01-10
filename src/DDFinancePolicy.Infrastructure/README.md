@@ -2,7 +2,7 @@
 
 In Clean Architecture, Infrastructure concerns are kept separate from the core business rules (or domain model in DDD).
 
-The only project that has code concerned with EF, Files, Email, Web Services, Azure/AWS/GCP.
+It is the only project that has code concerned with EF, Files, Email, Web Services, Azure/AWS/GCP.
 
 It depend on Core where abstractions (interfaces) exist.
 

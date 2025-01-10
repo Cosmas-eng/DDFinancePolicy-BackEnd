@@ -1,4 +1,6 @@
-﻿namespace DDFinancePolicy.Web.Policies;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DDFinancePolicy.Web.Policies;
 
 public class CreatePolicyRequest
 {
@@ -7,7 +9,8 @@ public class CreatePolicyRequest
   /// <summary>
   /// Policy name
   /// </summary>
-  public required string PolicyName { get; set; }
+  [Required]
+  public string? PolicyName { get; set; }
   /// <summary>
   /// Policy Holder Database ID
   /// </summary>
@@ -15,11 +18,13 @@ public class CreatePolicyRequest
   /// <summary>
   /// Policy Holder's First Name
   /// </summary>
-  public required string FirstName { get; set; }
+  [Required]
+  public string? FirstName { get; set; }
   /// <summary>
   /// Policy Holder's Last Name
   /// </summary>
-  public required string LastName { get; set; }
+  [Required]
+  public string? LastName { get; set; }
   /// <summary>
   /// Policy Holder's Other Names
   /// </summary>
@@ -27,11 +32,13 @@ public class CreatePolicyRequest
   /// <summary>
   /// Policy Holder's Country Code
   /// </summary>
-  public required string CoutryCode { get; set; }
+  [Required]
+  public string? CoutryCode { get; set; }
   /// <summary>
   /// Policy Holder's Phone number
   /// </summary>
-  public required string Phone { get; set; }
+  [Required]
+  public string? Phone { get; set; }
   /// <summary>
   /// Policy Holder's Phone Extention
   /// </summary>

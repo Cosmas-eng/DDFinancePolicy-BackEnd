@@ -7,9 +7,8 @@ public class UpdatePremiumValidator : Validator<UpdatePremiumRequest>
   public UpdatePremiumValidator()
   {
     RuleFor(p => p.PolicyId)
-      .NotNull().WithMessage("Policy database id is required")
       .GreaterThan(0).WithMessage("Policy database Id cannot be less than or equal to zero")
-      .Must((args, policyId) => args.PolicyId == policyId).WithMessage("Rout and body IDs must match");
+      .Must((args, policyId) => args.Id == policyId).WithMessage("Rout and body IDs must match");
     RuleFor(p => p.NewPolicyValue)
       .NotNull().WithMessage("Policy value to update is required")
       .GreaterThan(0).WithMessage("Policy value cannot be less than or equal to zero");
