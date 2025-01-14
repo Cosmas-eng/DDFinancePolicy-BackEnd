@@ -16,7 +16,7 @@ public static class MapperExtention
       PolicyName = e.PolicyName,
       PolicyHolderId = e.PolicyHolderId,
       PolicyHolder = e.PolicyHolderName,
-      PhoneNumer = e.PhoneNumber!.ToString(),
+      PhoneNumber = e.PhoneNumber!.ToString(),
       PolicyAmount = $"Ksh.{e.Premuim}",
       PolicyStatus = e.PolicyStatus.ToString(),
     };

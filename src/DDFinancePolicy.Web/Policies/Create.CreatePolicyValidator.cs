@@ -33,7 +33,6 @@ public class CreatePolicyValidator : Validator<CreatePolicyRequest>
       .NotNull().WithMessage("Premium amount is required")
       .GreaterThan(0).WithMessage("Premium amount cannot less than or equal to 0");
     RuleFor(p => p.StartDate)
-      .NotNull().WithMessage("Policy start date is requies")
-      .Must(d => d > DateTime.Now).WithMessage("Policy start date cannot be in the past");
+      .NotNull().WithMessage("Policy start date is requies");
   }
 }

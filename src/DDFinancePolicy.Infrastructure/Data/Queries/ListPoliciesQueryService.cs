@@ -8,18 +8,18 @@ public class ListPoliciesQueryService(AppDbContext _db) : IListPoliciesQueryServ
   public async Task<IEnumerable<PolicyDto>> ListAsyc(string? holderSearch, int? statusFilter)
   {
     string sql = @"
-    SELECT 
-        Id, 
-        PolicyName, 
-        PolicyHolderName AS Holder, 
-        PolicyStatus AS Status
-    FROM 
-        Policies
-    WHERE 
-        (@searchTerm IS NULL OR PolicyHolderName LIKE '%' + @searchTerm + '%')
-        AND (@filterEnumValue IS NULL OR PolicyStatus = @filterEnumValue)
-    ORDER BY
-        PolicyHolderName ASC";
+                SELECT 
+                    Id, 
+                    PolicyName, 
+                    PolicyHolderName AS Holder, 
+                    PolicyStatus AS Status
+                FROM 
+                    Policies
+                WHERE 
+                    (@searchTerm IS NULL OR PolicyHolderName LIKE '%' + @searchTerm + '%')
+                    AND (@filterEnumValue IS NULL OR PolicyStatus = @filterEnumValue)
+                ORDER BY
+                    PolicyHolderName ASC";
 
     // Assumes `filterTerm` is directly an integer from the UI matching domain the enum value
     int? filterEnumValue = statusFilter == 0 ? (int?)null : statusFilter; // Example: 0 means no filter applied

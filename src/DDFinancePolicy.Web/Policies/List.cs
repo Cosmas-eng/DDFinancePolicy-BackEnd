@@ -13,7 +13,7 @@ public class List(IListPoliciesQueryService queryService) : Endpoint<PolicyListR
     {
       s.Summary = "Gets a list policies from the database";
       s.Description = "Returns the available list of policies from the databate after the search term and filter in the request are applied" +
-      "The filter term is an enum value where Active = 1, Inactive = 2, Pending = 3, and Canceled = 4";
+      "The filter term is an enum value where Active = 1, Inactive = 2, Pending = 3, and Cancelled = 4";
       s.Responses[200] = "Policies returned successfully";
     });
   }

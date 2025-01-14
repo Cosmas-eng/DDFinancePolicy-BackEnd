@@ -18,6 +18,8 @@ public static class MiddlewareConfig
       app.UseHsts();
     }
 
+    app.UseCors("AllowSpecificOrigin");
+
     app.UseFastEndpoints()
         .UseSwaggerGen(); // Includes AddFileServer and static files middleware
 

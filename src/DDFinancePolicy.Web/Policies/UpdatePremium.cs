@@ -7,7 +7,7 @@ public class UpdatePremium(IRepository<Policy> repository) : Endpoint<UpdatePrem
 {
   public override void Configure()
   {
-    Put(CreatePolicyRequest.Route);
+    Put(UpdatePremiumRequest.Route);
     AllowAnonymous();
     Summary(s =>
     {

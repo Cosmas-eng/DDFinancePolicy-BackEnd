@@ -40,7 +40,7 @@ Content-Type: application/json
 {
   "PolicyId": {{id_to_update}},
   "Id": 1,
-  "CoutryCode": "+254",
+  "CountryCode": "+254",
   "Phone": "734547824",
   "PhoneExtention": null
 }
@@ -55,7 +55,7 @@ Content-Type: application/json
 {
   "PolicyId": {{id_to_update}},
   "Id": 1,
-  "NewStatus": "Canceled"
+  "NewStatus": "Active"
 }
 
 ###
@@ -69,7 +69,7 @@ Content-Type: application/json
   "PolicyId": {{id_to_update}},
   "Id": 1,
   "NewPolicyValue": 73000,
-  "EffectiveDate": "2025-02-28T00:00:00Z"
+  "EffectiveDate": "2025-02-28"
 }
 
 ###

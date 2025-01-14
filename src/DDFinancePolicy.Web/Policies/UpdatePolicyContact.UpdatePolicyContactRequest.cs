@@ -20,7 +20,7 @@ public class UpdatePolicyContactRequest
   /// Policy Holder's Country Code
   /// </summary>
   [Required]
-  public string? CoutryCode { get; set; }
+  public string? CountryCode { get; set; }
   /// <summary>
   /// Policy Holder's Phone number
   /// </summary>

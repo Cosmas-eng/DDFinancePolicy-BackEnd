@@ -22,6 +22,7 @@ While this project applies the Clean Architecture template, it only implements t
 - [Patterns Used](#patterns-used)
   - [Domain Events](#domain-events)
   - [Related Projects](#related-projects)
+- [Local Setup](#local-setup)
 
 # Project Propertise
 
@@ -87,3 +88,12 @@ Domain events are a great pattern for decoupling a trigger for an operation from
 - [Specification](https://github.com/ardalis/specification)
 - [FastEndpoints](https://fast-endpoints.com/)
 
+# Local Setup
+
+After downloading the project and before runnign it, you need to make a few adjustments:
+
+- Change the database connection string for your database providing any authetiction details if neccesary.
+- Applying the migrations scripts that have already been generated in the infrastructure project to the database.
+- If the Angular UI is set up and running but not on `http://localhost:4200/`, then you have to update the program class for CORS `Cross-origin resource sharing` as neccesary to allow interaction.
+
+After the adjustments and on running the projects for the first time, database will be updated with seed data for which you can query and update as provided by the APIs.

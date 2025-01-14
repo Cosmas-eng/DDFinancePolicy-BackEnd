@@ -6,7 +6,7 @@ public class UpdatePolicyContactMaper : Mapper<UpdatePolicyContactRequest, Defau
 {
   public override Policy UpdateEntity(UpdatePolicyContactRequest r, Policy e)
   {
-    e.UpdatePhoneNumber(r.CoutryCode!, r.Phone!, r.PhoneExtention);
+    e.UpdatePhoneNumber(r.CountryCode!, r.Phone!, r.PhoneExtention);
     return e;
   }
 

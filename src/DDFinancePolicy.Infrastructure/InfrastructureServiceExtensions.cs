@@ -16,7 +16,8 @@ public static class InfrastructureServiceExtensions
     services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>))
            .AddScoped(typeof(IReadRepository<>), typeof(EfRepository<>))
            .AddScoped<IDeletePolicyService, DeletePolicyService>()
-           .AddScoped<IListPoliciesQueryService, ListPoliciesQueryService>();
+           .AddScoped<IListPoliciesQueryService, ListPoliciesQueryService>()
+           .AddScoped<ICheckHolderIdQueryService, ChechHolderIdQueryService>();
 
 
     logger.LogInformation("{Project} services registered", "Infrastructure");
